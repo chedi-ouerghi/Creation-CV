@@ -1,0 +1,15 @@
+.maincontent{
+    display: flex;
+}
+.rigthcontent{
+color:peru ;
+}
+.leftcontent{
+ background: linear-gradient(217deg, white, #d4e16c96);
+    width: 100%;
+    overflow-x: overlay;
+    height: 770px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
