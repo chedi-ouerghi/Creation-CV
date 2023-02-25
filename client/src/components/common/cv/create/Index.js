@@ -6,11 +6,10 @@ import { Avatar,  FormControl, FormLabel, Input,CheckboxGroup,
    MenuButton, Textarea, WrapItem, Box, IconButton, Slider, SliderTrack, SliderFilledTrack, SliderThumb, MenuList, MenuItem } from '@chakra-ui/react'
 import {  Link, useNavigate, useParams } from 'react-router-dom'
 import '../../../layout/cv/index.css'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import avatar from './avatar.avif'
-import {AiOutlineCheck, AiOutlineDownload } from 'react-icons/ai';
-import { MdDelete} from 'react-icons/md';
 import { add_cv } from '../../../../redux/Action/CvAction'
+import { uploadFileRequest } from '../../../../redux/Action/UploadFile'
 
 
 const Index = () => {
@@ -22,7 +21,6 @@ const Index = () => {
         const [Lastname, setLastname] = useState("");
         const [email, setEmail] = useState("");
         const [numberphone, setNumberphone] = useState("");
-        // const [description, setDescription] = useState("");
         const [adress, setAdress] = useState("");
         const [aboutus, setAboutus] = useState("");
         const [datedebut, setDatadebut] = useState("");
@@ -33,15 +31,12 @@ const Index = () => {
         const [etablisment, setEtablisment] = useState("");
         const [ville, setVille] = useState("");
         const [profile, setProflie] = useState("");
-        // const [Post, setPost] = useState("");
         const [langue, setLangue] = useState("");
         const [certificat, setCertificat] = useState("");
-        // const [qualité, setQualité] = useState("");
         const [descripcertif,setDescripcertif]=useState("");
         const [datefincertif,setDatefincertif]=useState("");
         const [datedebcertif,setDatedebcertif]=useState("");
   const [rating, setRating] = useState("");
-  // const [descriptionformation, setDescriptionformation] = useState("");
   const [descriptioncertficat, setDescriptioncertficat] = useState("");
 
 
@@ -89,9 +84,23 @@ const [showCertificatForm, setshowCertificatForm] = useState(false);
   function handleClick() {
     navigate(-1);
   }
+
+  // upload to image 
+//   const fileState = useSelector(state => state.fileReducer.file);
+
+// const uploading = fileState.uploading || false;
+// const uploadedFile = fileState.uploadedFile || null;
+// const uploadError = fileState.uploadError || null;
+
+//   const handleFileUpload = (event) => {
+//     const fileState = event.target.files[0];
+//     dispatch(uploadFileRequest(fileState));
+//   };
   return (
       <div className='mainn_content' style={{display:'flex'}}>
       <div className='sidebar'>
+        
+        {/* button to back to last page  */}
         <Button style={{
   marginTop: "0%",
   display: "flex",
@@ -107,6 +116,9 @@ const [showCertificatForm, setshowCertificatForm] = useState(false);
  onClick={handleClick}>
       Back
     </Button>
+
+  {/* form  */}
+
 <form onSubmit={handleSubmit}>
         {/* personalInformation */}
        <div className='containt'>
@@ -458,8 +470,14 @@ const [showCertificatForm, setshowCertificatForm] = useState(false);
           <div className='emplacment_preview'>
           <div className="cv-container">
   <div className="left-column">
-      <img src={avatar}/>
     <div className="section">
+      <img src={avatar}/>
+                        {/* image  */}
+            {/* {uploading && <p>Uploading file...</p>}
+  {uploadedFile && <p>File successfully uploaded: {uploadedFile}</p>}
+  {uploadError && <p>Error uploading file: {uploadError}</p>}
+  <input type="file" onChange={handleFileUpload} /> */}
+
     </div>
     <div className="section">
       <h2>À PROPOS</h2>

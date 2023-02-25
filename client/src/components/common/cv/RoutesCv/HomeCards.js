@@ -12,8 +12,7 @@ const HomeCards = () => {
         // get--cv 
   const cv = useSelector((state) =>state.cvreducer.Cvs);
 
-//   console.log(cv)
-// console.log(cv,'curent')
+
   useEffect(() => {
     dispatch(get_cv());
   }, [dispatch]);

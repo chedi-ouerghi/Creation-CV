@@ -20,7 +20,7 @@ const EditCv = () => {
    
   console.log(cv.id)
 
-
+// states 
   const [Firstname, setFirstname] = useState(cv.Firstname);
         const [Lastname, setLastname] = useState(cv?.Lastname);
         const [email, setEmail] = useState(cv?.email);
@@ -93,6 +93,8 @@ const [showCertificatForm, setshowCertificatForm] = useState(false);
     <>
       <div className='mainn_content' style={{display:'flex'}}>
         <div className='sidebar'>
+           {/* button to back to last page  */}
+           
             <Button style={{
   marginTop: "0%",
   display: "flex",
@@ -445,6 +447,7 @@ const [showCertificatForm, setshowCertificatForm] = useState(false);
     </Menu>
     </div >
 <div style={{paddingBlock:' 4%'}}>
+  {/* add form  */}
 <Button type='submit'>
   Submit
   </Button>
@@ -454,6 +457,7 @@ const [showCertificatForm, setshowCertificatForm] = useState(false);
 
    
     </div>
+       {/* preview cv  */}
     <div className='sideleft'  style={{color:'black'}}>
          <div className='emplacment_preview'>
             <div className="cv-container">

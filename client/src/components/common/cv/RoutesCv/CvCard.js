@@ -3,6 +3,9 @@ import './cvstyle.css'
 
 const CvCard = ({cv}) => {
   return (
+
+    // preview into card 
+    
             <div className="cvv-containerr">
     <div className="leftt-columnn">
       <img src={cv.avatar}/>
